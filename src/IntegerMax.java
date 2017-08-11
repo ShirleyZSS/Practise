@@ -3,6 +3,11 @@ import java.util.*;
 
 /**
  * Created by Shirley on 2017/8/8.
+ * 使用集合实现注册登陆功能
+ *
+ 1、注册：提示用户输入注册的账号(数字)与密码，如果输入的id号已经存在集合中，提示用户重新输入。
+            注册完毕之后，把集合中的所有用户信息打印出来。(使用：toArrry()方法)
+ 2、登陆：提示用户输入登陆的账号与密码,如果账号与密码这个用户已经存在集合中，那么登陆成功，否则登陆失败。
  */
 
 class Person{
@@ -56,11 +61,32 @@ public class IntegerMax {
                 for(int i=0;i<obj.length;i++){
                     System.out.print(obj[i]);
                 }
+                System.out.println();
             }else if("b".equalsIgnoreCase(option)){
                 System.out.println("请输入登录账号");
+                int id=in.nextInt();
+                System.out.println("请输入登录密码");
+                String psd=in.next();
+                //遍历集合List 查找账号与密码是否存在
+                Iterator it=list.iterator();
+              outer:  while(true) {
+                    while (it.hasNext()) {
+                        Person p2 = (Person) it.next();
+                        if (!(p2.id == id && (p2.psd).equals(psd))) {
+                            continue;
+                        } else {
+                            System.out.println("登录成功！！");
+                            break outer;
+                        }
+                    }
+                    System.out.println("账号或密码错误！");
+                    break ;
+                }
             }else {
                 System.out.println("输入格式错误，请重新输入！");
             }
+            System.out.println();
+            System.out.println("请输入您的功能选择 A(注册) B（登录）");
         }
     }
 }
