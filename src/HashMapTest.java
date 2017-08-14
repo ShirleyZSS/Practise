@@ -7,7 +7,7 @@ import java.util.Set;
 /**
  * Created by Shirley on 2017/8/14.
  */
-public class MapTest {
+public class HashMapTest {
     public static void main(String args[]) {
         Map<String, String> map = new HashMap<String, String>();
         map.put("1","赵姗姗");
