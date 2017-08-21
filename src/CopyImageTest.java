@@ -14,8 +14,8 @@ public class CopyImageTest {
         FileOutputStream fileOutputStream=new FileOutputStream(file1);
         byte[] buf=new byte[1024];
         int length=0;
-        while(fileInputStream.read(buf)!=-1){
-            fileOutputStream.write(buf);
+        while((length=fileInputStream.read(buf))!=-1){
+            fileOutputStream.write(buf,0,length);
         }
         fileInputStream.close();
         fileOutputStream.close();
