@@ -1,9 +1,11 @@
-package sort;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BubbleSort {
+/**
+ * Created by Shirley on 2017/8/31.
+ * 美团测试开发岗 编程题1 交错序列（寻找序列的子交错序列）
+ */
+public class JiaoCuoXuLie {
     public static void main(String args[]){
         Scanner in=new Scanner(System.in);
         while(in.hasNext()){
